@@ -8,9 +8,9 @@ std::string jogador::getapelido() const { return apelido; }
 std::string jogador::getNome() const { return nome; }
 
 void jogador::registrarV(const std::string& jogo) {
-    if (jogo == "Reversi") vitoriasReversi++;
-    else if (jogo == "Lig4") vitoriasLiga4++;
-    else if (jogo == "Velha") vitoriasVelha++;
+    if (jogo == "Reversi") vitoriaReversi++;
+    else if (jogo == "Lig4") vitoriaLiga4++;
+    else if (jogo == "Velha") vitoriaVelha++;
 }
 
 void jogador::registrarD(const std::string& jogo) {
@@ -21,7 +21,7 @@ void jogador::registrarD(const std::string& jogo) {
 
 void jogador::exibirE() const {
     std::cout << apelido << " (" << nome << "):\n"
-              << "Reversi - Vitórias: " << vitoriasReversi << ", Derrotas: " << derrotaReversi << "\n"
-              << "Lig4 - Vitórias: " << vitoriasLiga4 << ", Derrotas: " << derrotaLiga4 << "\n"
-              << "Velha - Vitórias: " << vitoriasVelha << ", Derrotas: " << derrotaVelha << "\n";
+              << "Reversi - Vitórias: " << vitoriaReversi << ", Derrotas: " << derrotaReversi << "\n"
+              << "Lig4 - Vitórias: " << vitoriaLiga4 << ", Derrotas: " << derrotaLiga4 << "\n"
+              << "Velha - Vitórias: " << vitoriaVelha << ", Derrotas: " << derrotaVelha << "\n";
 }

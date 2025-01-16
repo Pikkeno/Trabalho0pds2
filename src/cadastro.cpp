@@ -1,4 +1,3 @@
-// src/CadastroJogadores.cpp
 #include "cadastro.hpp"
 #include <fstream>
 
@@ -28,9 +27,8 @@ bool Cadastrar::remover(const std::string& apelido) {
 }
 
 void Cadastrar::listar() const {
-    for (const auto& [apelido, jogador] : jogadores) {
-        jogador.exibirE();
-    }
+    if (jogadores.empty()) std::cout << "Nenhum jogador cadastrado. \n";
+    return;
 }
 
 void Cadastrar::salvarDados() const {
@@ -40,7 +38,7 @@ void Cadastrar::salvarDados() const {
     }
 }
 
-void cadastrarJogadores::carregarDados() {
+void Cadastrar::carregarDados() {
     std::ifstream arquivo("jogadores.txt");
     std::string apelido, nome;
     while (arquivo >> apelido >> nome) {

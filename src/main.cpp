@@ -1,14 +1,14 @@
 #include "cadastro.hpp"
 
 int main() {
-    CadastroJogadores cadastro;
+    Cadastrar cadastro;
 
-    cadastro.cadastrarJogador("joao123", "João Silva");
-    cadastro.cadastrarJogador("ana456", "Ana Maria");
-    cadastro.listarJogadores();
+    cadastro.cadastrar("joao123", "João Silva");
+    cadastro.cadastrar("ana456", "Ana Maria");
+    cadastro.listar();
 
-    cadastro.removerJogador("joao123");
-    cadastro.listarJogadores();
+    cadastro.remover("joao123");
+    cadastro.listar();
 
     return 0;
 }

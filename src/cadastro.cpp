@@ -2,22 +2,22 @@
 #include "cadastro.hpp"
 #include <fstream>
 
-CadastroJogadores::CadastroJogadores() {
-    carregarDados();
+Cadastrar::Cadastrar() {
+   bool carregarDados();
 }
 
-bool CadastroJogadores::cadastrarJogador(const std::string& apelido, const std::string& nome) {
+bool Cadastrar::cadastrar(const std::string& apelido, const std::string& nome) {
     if (jogadores.find(apelido) != jogadores.end()) {
         std::cerr << "ERRO: jogador com apelido \"" << apelido << "\" já existe.\n";
         return false;
     }
-    jogadores[apelido] = Jogador(apelido, nome);
+    jogadores[apelido] = jogador(apelido, nome);
     salvarDados();
     std::cout << "Jogador \"" << apelido << "\" cadastrado com sucesso!\n";
     return true;
 }
 
-bool CadastroJogadores::removerJogador(const std::string& apelido) {
+bool Cadastrar::remover(const std::string& apelido) {
     if (jogadores.erase(apelido) == 0) {
         std::cerr << "ERRO: jogador \"" << apelido << "\" não encontrado.\n";
         return false;
@@ -27,23 +27,23 @@ bool CadastroJogadores::removerJogador(const std::string& apelido) {
     return true;
 }
 
-void CadastroJogadores::listarJogadores() const {
+void Cadastrar::listar() const {
     for (const auto& [apelido, jogador] : jogadores) {
-        jogador.exibirEstatisticas();
+        jogador.exibirE();
     }
 }
 
-void CadastroJogadores::salvarDados() const {
+void Cadastrar::salvarDados() const {
     std::ofstream arquivo("jogadores.txt");
     for (const auto& [apelido, jogador] : jogadores) {
-        arquivo << jogador.getApelido() << " " << jogador.getNome() << "\n";
+        arquivo << jogador.getapelido() << " " << jogador.getNome() << "\n";
     }
 }
 
-void CadastroJogadores::carregarDados() {
+void cadastrarJogadores::carregarDados() {
     std::ifstream arquivo("jogadores.txt");
     std::string apelido, nome;
     while (arquivo >> apelido >> nome) {
-        jogadores[apelido] = Jogador(apelido, nome);
+        jogadores[apelido] = jogador(apelido, nome);
     }
 }

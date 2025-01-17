@@ -10,8 +10,8 @@
 
 class jogador {
 private:
-    std::string apelido;
-    std::string nome;
+    std::string Apelido;
+    std::string Nome;
     int vitoriaReversi = 0;    int derrotaReversi = 0;    int vitoriaLiga4 = 0;    
     int derrotaLiga4 = 0;       int vitoriaVelha = 0;      int derrotaVelha = 0;
 
@@ -23,29 +23,19 @@ public:
     std::string serializar() const;
     void desserializar(const std::string& dados);
 
-    // Exibição de estatísticas
     void exibirE() const;
 };
 
-class GerenciadorJogadores {
+class Gerente {
 private:
-    std::unordered_map<std::string, jogador> jogadores; // Mapeia apelidos para objetos Jogador
+    std::unordered_map<std::string, jogador> jogadores; 
 
-    // Métodos auxiliares para persistência
     void salvarDados() const;
     void carregarDados();
 
 public:
-    // Construtor
-    GerenciadorJogadores();
-
-    // Gerenciamento de jogadores
-    bool cadastrarJogador(const std::string& apelido, const std::string& nome);
-    bool removerJogador(const std::string& apelido);
-    void listarJogadores() const;
-
-    // Gerenciamento de partidas
+    Gerente();
     void iniciarPartida(const std::string& tipoJogo, const std::string& apelidoJogador1, const std::string& apelidoJogador2);
 };
 
-#endif // JOGADOR_HPP
+#endif

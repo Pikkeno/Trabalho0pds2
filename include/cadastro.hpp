@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 
-class cadastro {
+class Cadastrar {
     private: std::unordered_map<std::string, jogador> jogadores;
     void salvarDados() const;
     void carregarDados();
@@ -15,6 +15,6 @@ class cadastro {
     public: bool cadastrarJogadores();
     bool cadastrar(const std::string& apelido, const std::string& nome);
     bool remover(const std::string& apelido);
-    bool listar() const;
+    void listar() const;
 };
 #endif

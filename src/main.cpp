@@ -1,5 +1,11 @@
 #include "JogoDaVelha.hpp"
+#include "Reversi.hpp"
 #include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+
+
 
 int main() {
     JogoDaVelha jogo;
@@ -30,4 +36,10 @@ int main() {
 
     std::cout << "O jogo terminou empatado!\n";
     return 0;
+
+    Reversi jogo;
+
+    std::cout << "Bem-vindo ao Reversi!\n";
+    jogo.exibirTabuleiro();
+    
 }

@@ -17,7 +17,7 @@ private:
 
 public:
     jogador();jogador(const std::string& apelido, const std::string& nome);
-    std::string getapelido() const;     std::string getNome() const;
+    std::string getApelido() const;     std::string getNome() const;
     void registrarV(const std::string& jogo);    void registrarD(const std::string& jogo);    void resetE();
     
     std::string serializar() const;

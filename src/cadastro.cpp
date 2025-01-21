@@ -34,7 +34,7 @@ void Cadastrar::listar() const {
 void Cadastrar::salvarDados() const {
     std::ofstream arquivo("jogadores.txt");
     for (const auto& [apelido, jogador] : jogadores) {
-        arquivo << jogador.getapelido() << " " << jogador.getNome() << "\n";
+        arquivo << jogador.getApelido() << " " << jogador.getNome() << "\n";
     }
 }
 

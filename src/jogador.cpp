@@ -5,7 +5,7 @@
 jogador::jogador() : Apelido(""), Nome("") {}
 jogador::jogador(const std::string& apelido, const std::string& nome) : Apelido(apelido), Nome(nome) {}
 
-std::string jogador::getapelido() const { return Apelido; }
+std::string jogador::getApelido() const { return Apelido; }
 std::string jogador::getNome() const { return Nome; }
 
 void jogador::registrarV(const std::string& jogo) {
@@ -73,6 +73,6 @@ void Gerente::carregarDados() {
     while (std::getline(arquivo, linha)) {
         jogador jogador;
         jogador.desserializar(linha);
-        jogadores[jogador.getapelido()] = jogador;
+        jogadores[jogador.getApelido()] = jogador;
     }
 }

@@ -8,10 +8,11 @@
 
 
 int main() {
-    JogoDaVelha jogo;
+    JogoDaVelha VelhaJogo;
 
     std::cout << "Bem-vindo ao Jogo da Velha!\n";
-    jogo.exibirTabuleiro();
+    
+    VelhaJogo.exibirTabuleiro();
 
     char jogadorAtual = 'X';
     for (int turno = 0; turno < 9; ++turno) {
@@ -19,14 +20,14 @@ int main() {
         std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
         std::cin >> linha >> coluna;
 
-        if (!jogo.jogar(linha - 1, coluna - 1, jogadorAtual)) {
+        if (!VelhaJogo.jogar(linha - 1, coluna - 1, jogadorAtual)) {
             --turno; // Repetir o turno se a jogada for inválida
             continue;
         }
 
-        jogo.exibirTabuleiro();
+        VelhaJogo.exibirTabuleiro();
 
-        if (jogo.verificarVitoria(jogadorAtual)) {
+        if (VelhaJogo.verificarVitoria(jogadorAtual)) {
             std::cout << "Parabéns! Jogador " << jogadorAtual << " venceu!\n";
             return 0;
         }
@@ -37,9 +38,29 @@ int main() {
     std::cout << "O jogo terminou empatado!\n";
     return 0;
 
-    Reversi jogo;
+    Reversi ReversiJogo;
 
     std::cout << "Bem-vindo ao Reversi!\n";
-    jogo.exibirTabuleiro();
-    
+    ReversiJogo.exibirTabuleiro();
+
+    char jogadorAtualreversi = 'X';
+    for (int turno = 0; turno < 64; ++turno) {
+        int linha, coluna;
+        std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
+        std::cin >> linha >> coluna;
+
+        if (!ReversiJogo.jogar(linha - 1, coluna - 1, jogadorAtual)) {
+            --turno; // Repetir o turno se a jogada for inválida
+            continue;
+        }
+
+        ReversiJogo.exibirTabuleiro();
+
+        if (ReversiJogo.verificarVitoria(jogadorAtual)) {
+            std::cout << "Parabéns! Jogador " << jogadorAtual << " venceu!\n";
+            return 0;
+        }
+
+        jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X'; // Alternar jogador
+    }
 }

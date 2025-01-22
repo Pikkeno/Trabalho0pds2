@@ -30,8 +30,10 @@ void Gerente::iniciarPartida(const std::string& tipoJogo, const std::string& ape
 
 void Gerente::salvarDados() const {
     std::ofstream arquivo("jogadores.txt");
-    for (const auto& [apelido, jogador] : jogadores) {
-        arquivo << jogador.serializar() << "\n";
+    for (const auto& par : jogadores) {
+    const auto& apelido = par.first;
+    const auto& jogador = par.second;
+    arquivo << jogador.serializar() << "\n";
     }
 }
 

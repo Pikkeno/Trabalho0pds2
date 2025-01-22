@@ -33,4 +33,10 @@ void jogador::exibirE() const {
               << "Lig4 - Vitórias: " << vitoriaLiga4 << ", Derrotas: " << derrotaLiga4 << "\n"
               << "Velha - Vitórias: " << vitoriaVelha << ", Derrotas: " << derrotaVelha << "\n";
 }
-
+std::string jogador::serializar() const {
+    return Apelido + " " + Nome + " " + std::to_string(vitoriaReversi) + " " + std::to_string(derrotaReversi) + " " + std::to_string(vitoriaLiga4) + " " + std::to_string(derrotaLiga4) + " " + std::to_string(vitoriaVelha) + " " + std::to_string(derrotaVelha);
+}
+void jogador::desserializar(const std::string& dados) {
+    std::istringstream iss(dados);
+    iss >> Apelido >> Nome >> vitoriaReversi >> derrotaReversi >> vitoriaLiga4 >> derrotaLiga4 >> vitoriaVelha >> derrotaVelha;
+}

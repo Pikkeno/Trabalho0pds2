@@ -1,47 +1,37 @@
-#include "cadastro.hpp"
-#include <fstream>
+#ifndef CADASTRO_HPP
+#define CADASTRO_HPP
 
-Cadastrar::Cadastrar() {
-   bool carregarDados();
-}
+#include <iostream>
+#include <string>
+#include <map>
 
-bool Cadastrar::cadastrar(const std::string& apelido, const std::string& nome) {
-    if (jogadores.find(apelido) != jogadores.end()) {
-        std::cerr << "ERRO: jogador com apelido \"" << apelido << "\" já existe.\n";
-        return false;
-    }
-    jogadores[apelido] = jogador(apelido, nome);
-    salvarDados();
-    std::cout << "Jogador \"" << apelido << "\" cadastrado com sucesso!\n";
-    return true;
-}
+// Classe Jogador (certifique-se de que existe no seu código)
+class Jogador {
+private:
+    std::string apelido;
+    std::string nome;
 
-bool Cadastrar::remover(const std::string& apelido) {
-    if (jogadores.erase(apelido) == 0) {
-        std::cerr << "ERRO: jogador \"" << apelido << "\" não encontrado.\n";
-        return false;
-    }
-    salvarDados();
-    std::cout << "Jogador \"" << apelido << "\" removido com sucesso!\n";
-    return true;
-}
+public:
+    Jogador(const std::string& apelido, const std::string& nome)
+        : apelido(apelido), nome(nome) {}
 
-void Cadastrar::listar() const {
-    if (jogadores.empty()) std::cout << "Nenhum jogador cadastrado. \n";
-    return;
-}
+    const std::string& getApelido() const { return apelido; }
+    const std::string& getNome() const { return nome; }
+};
 
-void Cadastrar::salvarDados() const {
-    std::ofstream arquivo("jogadores.txt");
-    for (const auto& [apelido, jogador] : jogadores) {
-        arquivo << jogador.getApelido() << " " << jogador.getNome() << "\n";
-    }
-}
+class Cadastrar {
+private:
+    std::map<std::string, Jogador> jogadores;
 
-void Cadastrar::carregarDados() {
-    std::ifstream arquivo("jogadores.txt");
-    std::string apelido, nome;
-    while (arquivo >> apelido >> nome) {
-        jogadores[apelido] = jogador(apelido, nome);
-    }
-}
+    // Função auxiliar
+    void carregarDados();
+
+public:
+    Cadastrar(); // Declaração do construtor
+    bool cadastrar(const std::string& apelido, const std::string& nome);
+    bool remover(const std::string& apelido);
+    void listar() const;
+    void salvarDados() const;
+};
+
+#endif // CADASTRO_HPP

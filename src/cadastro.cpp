@@ -1,37 +1,36 @@
-#ifndef CADASTRO_HPP
-#define CADASTRO_HPP
-
+#include "Cadastro.hpp"
 #include <iostream>
-#include <string>
-#include <map>
 
-// Classe Jogador (certifique-se de que existe no seu código)
-class Jogador {
-private:
-    std::string apelido;
-    std::string nome;
+Cadastro::Cadastro() {}
 
-public:
-    Jogador(const std::string& apelido, const std::string& nome)
-        : apelido(apelido), nome(nome) {}
+bool Cadastro::adicionarJogador(const std::string& apelido, const std::string& nome) {
+    if (jogadores.find(apelido) != jogadores.end()) {
+        std::cerr << "Erro: Jogador com apelido '" << apelido << "' já está cadastrado.\n";
+        return false;
+    }
+    jogadores[apelido] = Jogador(apelido, nome);
+    return true;
+}
 
-    const std::string& getApelido() const { return apelido; }
-    const std::string& getNome() const { return nome; }
-};
+bool Cadastro::removerJogador(const std::string& apelido) {
+    if (jogadores.erase(apelido) == 0) {
+        std::cerr << "Erro: Jogador com apelido '" << apelido << "' não encontrado.\n";
+        return false;
+    }
+    return true;
+}
 
-class Cadastrar {
-private:
-    std::map<std::string, Jogador> jogadores;
+void Cadastro::listarJogadores() const {
+    if (jogadores.empty()) {
+        std::cout << "Nenhum jogador cadastrado.\n";
+    } else {
+        std::cout << "Lista de Jogadores:\n";
+        for (const auto& par : jogadores) {
+            std::cout << "Apelido: " << par.first << ", Nome: " << par.second.getNome() << '\n';
+        }
+    }
+}
 
-    // Função auxiliar
-    void carregarDados();
-
-public:
-    Cadastrar(); // Declaração do construtor
-    bool cadastrar(const std::string& apelido, const std::string& nome);
-    bool remover(const std::string& apelido);
-    void listar() const;
-    void salvarDados() const;
-};
-
-#endif // CADASTRO_HPP
+std::map<std::string, Jogador>& Cadastro::getJogadores() {
+    return jogadores;
+    }

@@ -1,20 +1,20 @@
 #ifndef CADASTRO_HPP
 #define CADASTRO_HPP
 
-#include "jogador.hpp"
-#include <unordered_map>
-#include <vector>
-#include <iostream>
+#include "Jogador.hpp"
+#include <map>
 #include <string>
 
-class Cadastrar {
-    private: std::unordered_map<std::string, jogador> jogadores;
-    void salvarDados() const;
-    void carregarDados();
+class Cadastro {
+private:
+    std::map<std::string, Jogador> jogadores;  // Mapa de jogadores com chave sendo o apelido.
 
-    public: bool cadastrarJogadores();
-    bool cadastrar(const std::string& apelido, const std::string& nome);
-    bool remover(const std::string& apelido);
-    void listar() const;
+public:
+    Cadastro();
+    bool adicionarJogador(const std::string& apelido, const std::string& nome);
+    bool removerJogador(const std::string& apelido);
+    void listarJogadores() const;
+    std::map<std::string, Jogador>& getJogadores();  // Método para retornar todos os jogadores.
 };
-#endif
+
+#endif // CADASTRO_HPP

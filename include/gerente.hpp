@@ -1,20 +1,16 @@
 #ifndef GERENTE_HPP
 #define GERENTE_HPP
 
-#include <unordered_map>
-#include <string>
-#include "jogador.hpp"
+#include "Cadastro.hpp"
+#include <fstream>
 
 class Gerente {
 private:
-    std::unordered_map<std::string, jogador> jogadores; 
-
-    void salvarDados() const;
-    void carregarDados();
+    Cadastro& cadastro;
 
 public:
-    Gerente();
-    void iniciarPartida(const std::string& tipoJogo, const std::string& apelidoJogador1, const std::string& apelidoJogador2);
+    Gerente(Cadastro& cadastro);
+    void salvarDados() const;
 };
 
-#endif
+#endif // GERENTE_HPP

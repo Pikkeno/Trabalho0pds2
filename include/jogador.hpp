@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include <vector>
 
-class jogador {
+class Jogador {
 private:
     std::string Apelido;
     std::string Nome;
@@ -16,9 +16,9 @@ private:
     int derrotaLiga4 = 0;       int vitoriaVelha = 0;      int derrotaVelha = 0;
 
 public:
-    jogador();jogador(const std::string& apelido, const std::string& nome);
+    Jogador();Jogador(const std::string& apelido, const std::string& nome);
     std::string getApelido() const;     std::string getNome() const;
-    void registrarV(const std::string& jogo);    void registrarD(const std::string& jogo);    void resetE();
+    void registrarVitoria(const std::string& jogo);    void registrarDerrota(const std::string& jogo);    void resetE();
     
     std::string serializar() const;
     void desserializar(const std::string& dados);

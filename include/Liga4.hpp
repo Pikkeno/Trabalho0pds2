@@ -1,21 +1,13 @@
 #ifndef LIGA4_HPP
 #define LIGA4_HPP
 
-#include "tabuleiro.hpp" // Inclui a classe base
+#include "tabuleiro.hpp"
 
 class Liga4 : public JogoDeTabuleiro {
 public:
-    // Construtor
-    Liga4();
-
-    // Sobrescrita do método jogar (comportamento específico de Liga4)
-    bool jogar(int linha, int coluna, char jogador) override;
-
-    // Sobrescrita do método verificar vitória
-    bool verificarVitoria(char jogador) const override;
-
-    // Sobrescrita do método exibir tabuleiro (opcional)
-    void exibirTabuleiro() const override;
+    Liga4(int linhas = 6, int colunas = 7);
+    bool jogar(int coluna, char jogador) override;
+    bool verificarVitoria() const override;
 };
 
 #endif // LIGA4_HPP

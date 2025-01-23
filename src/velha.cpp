@@ -1,31 +1,32 @@
 #include "JogoDaVelha.hpp"
+#include <iostream>
 
 JogoDaVelha::JogoDaVelha() : JogoDeTabuleiro(3, 3) {}
 
-bool JogoDaVelha::jogar(int linha, int coluna, char jogador) {
-    if (linha < 0 || linha >= linhas || coluna < 0 || coluna >= colunas || tabuleiro[linha][coluna] != ' ') {
-        std::cerr << "Jogada inválida.\n";
-        return false;
+bool JogoDaVelha::jogar(int posicao, char jogador) {
+    int linha = posicao / 3;
+    int coluna = posicao % 3;
+    if (tabuleiro[linha][coluna] == ' ') {
+        tabuleiro[linha][coluna] = jogador;
+        return true;
     }
-    tabuleiro[linha][coluna] = jogador;
-    return true;
+    std::cerr << "Posição já ocupada.\n";
+    return false;
 }
 
-bool JogoDaVelha::verificarVitoria(char jogador) const {
-    // Verifica linhas, colunas e diagonais
-    for (int i = 0; i < linhas; ++i)
-        if (tabuleiro[i][0] == jogador && tabuleiro[i][1] == jogador && tabuleiro[i][2] == jogador)
-            return true;
-
-    for (int j = 0; j < colunas; ++j)
-        if (tabuleiro[0][j] == jogador && tabuleiro[1][j] == jogador && tabuleiro[2][j] == jogador)
-            return true;
-
-    if (tabuleiro[0][0] == jogador && tabuleiro[1][1] == jogador && tabuleiro[2][2] == jogador)
+bool JogoDaVelha::verificarVitoria() const {
+    for (int i = 0; i < 3; i++) {
+        if (tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2] && tabuleiro[i][0] != ' ') {
+            return true; // Verifica linhas
+        }
+        if (tabuleiro[0][i] == tabuleiro[1][i] && tabuleiro[1][i] == tabuleiro[2][i] && tabuleiro[0][i] != ' ') {
+            return true; // Verifica colunas
+        }
+    }
+    // Verifica diagonais
+    if (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2] && tabuleiro[0][0] != ' ' ||
+        tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0] && tabuleiro[0][2] != ' ') {
         return true;
-
-    if (tabuleiro[0][2] == jogador && tabuleiro[1][1] == jogador && tabuleiro[2][0] == jogador)
-        return true;
-
+    }
     return false;
 }

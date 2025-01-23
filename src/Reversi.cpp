@@ -1,26 +1,26 @@
 #include "Reversi.hpp"
+#include <iostream>
 
 Reversi::Reversi() : JogoDeTabuleiro(8, 8) {
+    // Configuração inicial para Reversi
     tabuleiro[3][3] = tabuleiro[4][4] = 'X';
     tabuleiro[3][4] = tabuleiro[4][3] = 'O';
-
 }
 
-bool Reversi::jogar(int linha, int coluna, char jogador) {
-    if (linha < 0 || linha >= linhas || coluna < 0 || coluna >= colunas || tabuleiro[linha][coluna] != ' ') {
-        std::cerr << "Jogada inválida.\n";
-        return false;
+bool Reversi::jogar(int posicao, char jogador) {
+    int linha = posicao / 8;
+    int coluna = posicao % 8;
+    // Adicionar lógica para verificar se a jogada é válida de acordo com as regras do Reversi
+    if (tabuleiro[linha][coluna] == ' ') {
+        tabuleiro[linha][coluna] = jogador;
+        // Adicionar lógica para "flipping" das peças
+        return true;
     }
-    tabuleiro[linha][coluna] = jogador;
-    return true;
+    std::cerr << "Jogada inválida.\n";
+    return false;
 }
 
-bool Reversi::verificarVitoria(char jogador) const {
-    // Verifica linhas, colunas e diagonais
-    for (int i = 0; i < linhas; ++i)
-        for (int j = 0; j < colunas; ++j)
-            if (tabuleiro[i][j] == jogador)
-                return true;
-
+bool Reversi::verificarVitoria() const {
+    // Implementar lógica para determinar o vencedor do jogo Reversi
     return false;
 }

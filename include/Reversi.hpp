@@ -4,10 +4,10 @@
 #include "tabuleiro.hpp"
 
 class Reversi : public JogoDeTabuleiro {
-    public:
-        Reversi();
-        bool jogar(int linha, int coluna, char jogador) override;
-        bool verificarVitoria(char jogador) const override;
+public:
+    Reversi();
+    bool jogar(int posicao, char jogador) override;
+    bool verificarVitoria() const override;
 };
 
-#endif 
+#endif // REVERSI_HPP

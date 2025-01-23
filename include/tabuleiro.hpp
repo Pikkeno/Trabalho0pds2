@@ -1,30 +1,22 @@
-#ifndef JOGODETABULEIRO_HPP
-#define JOGODETABULEIRO_HPP
+#ifndef TABULEIRO_HPP
+#define TABULEIRO_HPP
 
 #include <vector>
-#include <string>
 #include <iostream>
 
 class JogoDeTabuleiro {
 protected:
-    std::vector<std::vector<char>> tabuleiro; // Matriz que representa o tabuleiro
+    std::vector<std::vector<char>> tabuleiro;
     int linhas;
     int colunas;
 
 public:
-    // Construtor
     JogoDeTabuleiro(int linhas, int colunas);
+    virtual ~JogoDeTabuleiro() {}
 
-    // Destrutor virtual
-    virtual ~JogoDeTabuleiro() = default;
-
-    // Métodos básicos
+    virtual bool jogar(int posicao, char jogador) = 0;
+    virtual bool verificarVitoria() const = 0;
     virtual void exibirTabuleiro() const;
-    virtual bool jogar(int linha, int coluna, char jogador) = 0; // Jogada abstrata
-    virtual bool verificarVitoria(char jogador) const = 0;      // Verificação de vitória abstrata
-
-    // Limpa o tabuleiro
-    void resetTabuleiro();
 };
 
-#endif // JOGODETABULEIRO_HPP
+#endif // TABULEIRO_HPP

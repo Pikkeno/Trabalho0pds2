@@ -1,4 +1,5 @@
 #include "Cadastro.hpp"
+#include "Gerente.hpp"
 #include "JogoDaVelha.hpp"
 #include "Reversi.hpp"
 #include "Liga4.hpp"
@@ -27,7 +28,7 @@ std::unique_ptr<JogoDeTabuleiro> selecionarJogo() {
     }
 }
 
-void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro) {
+void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
     std::string apelido1, apelido2;
     std::cout << "Digite o apelido do jogador 1: ";
     std::cin >> apelido1;
@@ -48,6 +49,12 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro) {
                 jogo->exibirTabuleiro();
                 std::cout << "Parabéns! Jogador " << (jogadorAtual == 'X' ? apelido1 : apelido2) << " venceu!\n";
                 jogoAtivo = false;
+                // Registra vitórias/derrotas
+                Jogador* jogadorVencedor = cadastro.obterJogador(jogadorAtual == 'X' ? apelido1 : apelido2);
+                Jogador* jogadorPerdedor = cadastro.obterJogador(jogadorAtual == 'X' ? apelido2 : apelido1);
+                if (jogadorVencedor) jogadorVencedor->registrarVitoria("nomeDoJogo");
+                if (jogadorPerdedor) jogadorPerdedor->registrarDerrota("nomeDoJogo");
+                gerente.salvarDados();
             }
             jogadorAtual = (jogadorAtual == 'X' ? 'O' : 'X');
         } else {
@@ -58,6 +65,7 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro) {
 
 int main() {
     Cadastro cadastro;
+    Gerente gerente(cadastro); // Instância do Gerente
     char opcao;
 
     do {
@@ -93,7 +101,7 @@ int main() {
                 break;
             case '4': {
                 std::unique_ptr<JogoDeTabuleiro> jogo = selecionarJogo();
-                jogarJogo(jogo.get(), cadastro);
+                jogarJogo(jogo.get(), cadastro, gerente);
                 break;
             }
             case '5':

@@ -33,4 +33,12 @@ void Cadastro::listarJogadores() const {
 
 std::map<std::string, Jogador>& Cadastro::getJogadores() {
     return jogadores;
+}
+
+Jogador* Cadastro::obterJogador(const std::string& apelido) {
+    auto it = jogadores.find(apelido);
+    if (it != jogadores.end()) {
+        return &it->second;
     }
+    return nullptr;
+}

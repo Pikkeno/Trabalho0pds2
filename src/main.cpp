@@ -1,66 +1,108 @@
+#include "Cadastro.hpp"
 #include "JogoDaVelha.hpp"
 #include "Reversi.hpp"
+#include "Liga4.hpp"
 #include <iostream>
 #include <memory>
-#include <string>
-#include <vector>
 
+std::unique_ptr<JogoDeTabuleiro> selecionarJogo() {
+    int escolha;
+    std::cout << "\nSelecione um jogo:\n";
+    std::cout << "1. Jogo da Velha\n";
+    std::cout << "2. Reversi\n";
+    std::cout << "3. Liga4\n";
+    std::cout << "Escolha: ";
+    std::cin >> escolha;
 
+    switch (escolha) {
+        case 1:
+            return std::unique_ptr<JogoDaVelha>(new JogoDaVelha());
+        case 2:
+            return std::unique_ptr<Reversi>(new Reversi());
+        case 3:
+            return std::unique_ptr<Liga4>(new Liga4());
+        default:
+            std::cout << "Seleção inválida. Escolhendo Jogo da Velha por padrão.\n";
+            return std::unique_ptr<JogoDaVelha>(new JogoDaVelha());
+    }
+}
+
+void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro) {
+    std::string apelido1, apelido2;
+    std::cout << "Digite o apelido do jogador 1: ";
+    std::cin >> apelido1;
+    std::cout << "Digite o apelido do jogador 2: ";
+    std::cin >> apelido2;
+
+    char jogadorAtual = 'X'; // Alternar entre 'X' e 'O'
+    bool jogoAtivo = true;
+
+    while (jogoAtivo) {
+        jogo->exibirTabuleiro();
+        std::cout << "Vez do jogador " << jogadorAtual << " (" << (jogadorAtual == 'X' ? apelido1 : apelido2) << "): ";
+        int posicao;
+        std::cin >> posicao;
+
+        if (jogo->jogar(posicao, jogadorAtual)) {
+            if (jogo->verificarVitoria()) {
+                jogo->exibirTabuleiro();
+                std::cout << "Parabéns! Jogador " << (jogadorAtual == 'X' ? apelido1 : apelido2) << " venceu!\n";
+                jogoAtivo = false;
+            }
+            jogadorAtual = (jogadorAtual == 'X' ? 'O' : 'X');
+        } else {
+            std::cout << "Jogada inválida. Tente novamente.\n";
+        }
+    }
+}
 
 int main() {
-    JogoDaVelha VelhaJogo;
+    Cadastro cadastro;
+    char opcao;
 
-    std::cout << "Bem-vindo ao Jogo da Velha!\n";
-    
-    VelhaJogo.exibirTabuleiro();
+    do {
+        std::cout << "\nMenu Principal:\n";
+        std::cout << "1. Adicionar Jogador\n";
+        std::cout << "2. Remover Jogador\n";
+        std::cout << "3. Listar Jogadores\n";
+        std::cout << "4. Jogar\n";
+        std::cout << "5. Sair\n";
+        std::cout << "Escolha uma opção: ";
+        std::cin >> opcao;
 
-    char jogadorAtual = 'X';
-    for (int turno = 0; turno < 9; ++turno) {
-        int linha, coluna;
-        std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
-        std::cin >> linha >> coluna;
-
-        if (!VelhaJogo.jogar(linha - 1, coluna - 1, jogadorAtual)) {
-            --turno; // Repetir o turno se a jogada for inválida
-            continue;
+        switch (opcao) {
+            case '1': {
+                std::string apelido, nome;
+                std::cout << "Digite o apelido do jogador: ";
+                std::cin >> apelido;
+                std::cout << "Digite o nome completo do jogador: ";
+                std::cin.ignore();
+                std::getline(std::cin, nome);
+                cadastro.adicionarJogador(apelido, nome);
+                break;
+            }
+            case '2': {
+                std::string apelido;
+                std::cout << "Digite o apelido do jogador a remover: ";
+                std::cin >> apelido;
+                cadastro.removerJogador(apelido);
+                break;
+            }
+            case '3':
+                cadastro.listarJogadores();
+                break;
+            case '4': {
+                std::unique_ptr<JogoDeTabuleiro> jogo = selecionarJogo();
+                jogarJogo(jogo.get(), cadastro);
+                break;
+            }
+            case '5':
+                std::cout << "Saindo do programa...\n";
+                break;
+            default:
+                std::cout << "Opção inválida!\n";
         }
+    } while (opcao != '5');
 
-        VelhaJogo.exibirTabuleiro();
-
-        if (VelhaJogo.verificarVitoria(jogadorAtual)) {
-            std::cout << "Parabéns! Jogador " << jogadorAtual << " venceu!\n";
-            return 0;
-        }
-
-        jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X'; // Alternar jogador
-    }
-
-    std::cout << "O jogo terminou empatado!\n";
     return 0;
-
-    Reversi ReversiJogo;
-
-    std::cout << "Bem-vindo ao Reversi!\n";
-    ReversiJogo.exibirTabuleiro();
-
-    char jogadorAtualreversi = 'X';
-    for (int turno = 0; turno < 64; ++turno) {
-        int linha, coluna;
-        std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
-        std::cin >> linha >> coluna;
-
-        if (!ReversiJogo.jogar(linha - 1, coluna - 1, jogadorAtual)) {
-            --turno; // Repetir o turno se a jogada for inválida
-            continue;
-        }
-
-        ReversiJogo.exibirTabuleiro();
-
-        if (ReversiJogo.verificarVitoria(jogadorAtual)) {
-            std::cout << "Parabéns! Jogador " << jogadorAtual << " venceu!\n";
-            return 0;
-        }
-
-        jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X'; // Alternar jogador
-    }
 }

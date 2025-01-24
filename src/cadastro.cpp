@@ -1,6 +1,7 @@
 #include "Cadastro.hpp"
 #include <iostream>
 
+
 Cadastro::Cadastro() {}
 
 bool Cadastro::adicionarJogador(const std::string& apelido, const std::string& nome) {

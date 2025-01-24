@@ -1,28 +1,39 @@
-// Jogador.hpp
 #ifndef JOGADOR_HPP
 #define JOGADOR_HPP
-
+#include <locale.h>
 #include <string>
-#include <sstream>
-#include <iostream>
-#include <unordered_map>
-#include <vector>
 
 class Jogador {
 private:
     std::string Apelido;
     std::string Nome;
-    int vitoriaReversi = 0;    int derrotaReversi = 0;    int vitoriaLiga4 = 0;    
-    int derrotaLiga4 = 0;       int vitoriaVelha = 0;      int derrotaVelha = 0;
+    int vitoriaReversi, derrotaReversi;
+    int vitoriaLiga4, derrotaLiga4;
+    int vitoriaVelha, derrotaVelha;
+    int totalVitorias;  // Total de vitórias em todos os jogos
+    int totalDerrotas;  // Total de derrotas em todos os jogos
 
 public:
-    Jogador();Jogador(const std::string& apelido, const std::string& nome);
-    std::string getApelido() const;     std::string getNome() const;
-    void registrarVitoria(const std::string& jogo);    void registrarDerrota(const std::string& jogo);    void resetE();
-    
+    Jogador();
+    Jogador(const std::string& apelido, const std::string& nome);
+
+    std::string getApelido() const;
+    std::string getNome() const;
+
+    int getVitorias() const;
+    void setVitorias(int vitorias);
+
+    int getDerrotas() const;
+    void setDerrotas(int derrotas);
+
+    void registrarVitoria(const std::string& jogo);
+    void registrarDerrota(const std::string& jogo);
+
+    void resetE();
+    void exibirE() const;
+
     std::string serializar() const;
     void desserializar(const std::string& dados);
-
-    void exibirE() const;
 };
-#endif
+
+#endif // JOGADOR_HPP

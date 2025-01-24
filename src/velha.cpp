@@ -1,11 +1,12 @@
 #include "JogoDaVelha.hpp"
-#include <iostream>
 
 JogoDaVelha::JogoDaVelha() : JogoDeTabuleiro(3, 3) {}
 
-bool JogoDaVelha::jogar(int posicao, char jogador) {
-    int linha = posicao / 3;
-    int coluna = posicao % 3;
+bool JogoDaVelha::jogar(int linha, int coluna, char jogador) {
+    if (linha < 0 || linha >= 3 || coluna < 0 || coluna >= 3) {
+        std::cerr << "Posição fora do intervalo.\n";
+        return false;
+    }
     if (tabuleiro[linha][coluna] == ' ') {
         tabuleiro[linha][coluna] = jogador;
         return true;
@@ -23,10 +24,9 @@ bool JogoDaVelha::verificarVitoria() const {
             return true; // Verifica colunas
         }
     }
-    // Verifica diagonais
     if (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2] && tabuleiro[0][0] != ' ' ||
         tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0] && tabuleiro[0][2] != ' ') {
-        return true;
+        return true; // Verifica diagonais
     }
     return false;
 }

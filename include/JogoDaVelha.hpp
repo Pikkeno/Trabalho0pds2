@@ -6,7 +6,7 @@
 class JogoDaVelha : public JogoDeTabuleiro {
 public:
     JogoDaVelha();
-    bool jogar(int posicao, char jogador) override;
+    bool jogar(int linha,int coluna, char jogador) override;
     bool verificarVitoria() const override;
 };
 

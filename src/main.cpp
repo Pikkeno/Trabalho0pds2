@@ -5,6 +5,7 @@
 #include "Liga4.hpp"
 #include <iostream>
 #include <memory>
+#include <locale.h>
 
 std::unique_ptr<JogoDeTabuleiro> selecionarJogo() {
     int escolha;
@@ -21,7 +22,7 @@ std::unique_ptr<JogoDeTabuleiro> selecionarJogo() {
         case 2:
             return std::unique_ptr<Reversi>(new Reversi());
         case 3:
-            return std::unique_ptr<Liga4>(new Liga4());
+            return std::unique_ptr<Liga4>(new Liga4(6, 7)); // Ajustar conforme necessário
         default:
             std::cout << "Seleção inválida. Escolhendo Jogo da Velha por padrão.\n";
             return std::unique_ptr<JogoDaVelha>(new JogoDaVelha());
@@ -40,30 +41,28 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
 
     while (jogoAtivo) {
         jogo->exibirTabuleiro();
-        std::cout << "Vez do jogador " << jogadorAtual << " (" << (jogadorAtual == 'X' ? apelido1 : apelido2) << "): ";
-        int posicao;
-        std::cin >> posicao;
-
-        if (jogo->jogar(posicao, jogadorAtual)) {
-            if (jogo->verificarVitoria()) {
-                jogo->exibirTabuleiro();
-                std::cout << "Parabéns! Jogador " << (jogadorAtual == 'X' ? apelido1 : apelido2) << " venceu!\n";
-                jogoAtivo = false;
-                // Registra vitórias/derrotas
-                Jogador* jogadorVencedor = cadastro.obterJogador(jogadorAtual == 'X' ? apelido1 : apelido2);
-                Jogador* jogadorPerdedor = cadastro.obterJogador(jogadorAtual == 'X' ? apelido2 : apelido1);
-                if (jogadorVencedor) jogadorVencedor->registrarVitoria("nomeDoJogo");
-                if (jogadorPerdedor) jogadorPerdedor->registrarDerrota("nomeDoJogo");
-                gerente.salvarDados();
+        int linha, coluna;
+        if (dynamic_cast<Liga4*>(jogo) != nullptr) {
+            std::cout << "Digite a coluna para jogar: ";
+            std::cin >> coluna;
+            if (jogo->jogar(coluna, jogadorAtual)) {
+                // Código para verificar vitória e registrar resultados
             }
-            jogadorAtual = (jogadorAtual == 'X' ? 'O' : 'X');
         } else {
-            std::cout << "Jogada inválida. Tente novamente.\n";
+            std::cout << "Digite a linha e a coluna para jogar (separados por espaço): ";
+            std::cin >> linha >> coluna;
+            if (jogo->jogar(linha, coluna, jogadorAtual)) {
+                // Código para verificar vitória e registrar resultados
+            }
         }
+
+        // Verificação de vitória e alternação dos jogadores ocorre aqui
     }
 }
 
 int main() {
+    setlocale(LC_ALL, "Portuguese");
+
     Cadastro cadastro;
     Gerente gerente(cadastro); // Instância do Gerente
     char opcao;

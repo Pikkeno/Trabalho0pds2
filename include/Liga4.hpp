@@ -6,8 +6,11 @@
 class Liga4 : public JogoDeTabuleiro {
 public:
     Liga4(int linhas = 6, int colunas = 7);
-    bool jogar(int coluna, char jogador) override;
-    bool verificarVitoria() const override;
+    virtual bool jogar(int linha, int coluna, char jogador) override;  // Override to satisfy base class requirement
+    virtual bool verificarVitoria() const override;
+
+private:
+    bool jogar(int coluna, char jogador);  // Liga4 specific play method that uses only column
 };
 
 #endif // LIGA4_HPP

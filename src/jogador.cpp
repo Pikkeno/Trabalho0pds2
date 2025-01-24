@@ -32,8 +32,8 @@ void Jogador::setDerrotas(int derrotas) {
 
 void Jogador::registrarVitoria(const std::string& jogo) {
     if (jogo == "Reversi") vitoriaReversi++;
-    else if (jogo == "Lig4") vitoriaLiga4++;
-    else if (jogo == "Velha") vitoriaVelha++;
+    else if (jogo == "Liga4") vitoriaLiga4++;
+    else if (jogo == "JogoDaVelha") vitoriaVelha++;
     else {
         std::cerr << "IMPOSSIVEL REGISTRAR, JOGO INVALIDO.\n";
         return;
@@ -43,8 +43,8 @@ void Jogador::registrarVitoria(const std::string& jogo) {
 
 void Jogador::registrarDerrota(const std::string& jogo) {
     if (jogo == "Reversi") derrotaReversi++;
-    else if (jogo == "Lig4") derrotaLiga4++;
-    else if (jogo == "Velha") derrotaVelha++;
+    else if (jogo == "Liga4") derrotaLiga4++;
+    else if (jogo == "JogoDaVelha") derrotaVelha++;
     else {
         std::cerr << "IMPOSSIVEL REGISTRAR, JOGO INVALIDO.\n";
         return;

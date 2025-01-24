@@ -1,3 +1,4 @@
+// Reversi.hpp
 #ifndef REVERSI_HPP
 #define REVERSI_HPP
 
@@ -8,8 +9,7 @@ public:
     Reversi();
     bool jogar(int linha, int coluna, char jogador) override;
     bool verificarVitoria() const override;
-    void exibirTabuleiro() const override {  
-    }
+    void exibirTabuleiro() const override; // Apenas declaração
 
 private:
     bool daPraandar(char player) const;

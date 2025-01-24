@@ -37,7 +37,7 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
     std::cin >> apelido2;
 
     char jogadorAtual = 'X'; // Alternar entre 'X' e 'O'
-    bool jogoAtivo = true;
+    bool jogoAtivo = true; 
 
     while (jogoAtivo) {
         jogo->exibirTabuleiro();

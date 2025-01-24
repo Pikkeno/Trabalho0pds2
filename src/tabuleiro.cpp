@@ -1,8 +1,7 @@
 #include "tabuleiro.hpp"
 
-JogoDeTabuleiro::JogoDeTabuleiro(int linhas, int colunas) : linhas(linhas), colunas(colunas) {
-    tabuleiro.resize(linhas, std::vector<char>(colunas, ' '));
-}
+JogoDeTabuleiro::JogoDeTabuleiro(int linhas, int colunas)
+    : linhas(linhas), colunas(colunas), tabuleiro(linhas, std::vector<char>(colunas, ' ')) {}
 
 void JogoDeTabuleiro::exibirTabuleiro() const {
     for (const auto& linha : tabuleiro) {

@@ -1,3 +1,4 @@
+// tabuleiro.hpp
 #ifndef TABULEIRO_HPP
 #define TABULEIRO_HPP
 
@@ -11,20 +12,12 @@ protected:
     int colunas;
 
 public:
-    JogoDeTabuleiro(int linhas, int colunas) : linhas(linhas), colunas(colunas), tabuleiro(linhas, std::vector<char>(colunas, ' ')) {}
+    JogoDeTabuleiro(int linhas, int colunas);
     virtual ~JogoDeTabuleiro() {}
 
     virtual bool jogar(int linha, int coluna, char jogador) = 0;
     virtual bool jogar(int coluna, char jogador) { return false; }
     virtual bool verificarVitoria() const = 0;
-    virtual void exibirTabuleiro() const {
-        for (const auto& linha : tabuleiro) {
-            for (char celula : linha) {
-                std::cout << (celula == ' ' ? '.' : celula) << " ";
-            }
-            std::cout << "\n";
-        }
-    }
+    virtual void exibirTabuleiro() const;
 };
-
-#endif // TABULEIRO_HPP
+#endif

@@ -11,6 +11,7 @@ private:
 public:
     Gerente(Cadastro& cadastro);
     void salvarDados() const;
+    void carregarDados();
 };
 
 #endif // GERENTE_HPP

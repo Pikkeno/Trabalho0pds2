@@ -1,6 +1,7 @@
 #include "Gerente.hpp"
-#include <iostream>
 #include <fstream>
+#include <iostream>
+#include <sstream>
 
 Gerente::Gerente(Cadastro& cadastro) : cadastro(cadastro) {}
 
@@ -12,11 +13,35 @@ void Gerente::salvarDados() const {
     }
 
     // Assumindo que getJogadores() retorna std::map<std::string, Jogador>
-    const auto& jogadores = cadastro.getJogadores();  // Corrigindo o nome do método para getJogadores()
+    const auto& jogadores = cadastro.getJogadores();
     for (const auto& par : jogadores) {
-        arquivo << par.first << ";" << par.second.serializar() << "\n"; // Supõe que 'serializar()' retorna uma string com dados do jogador
+        arquivo << par.second.serializar() << "\n"; // Certifique-se de que `serializar()` fornece os dados corretos.
     }
 
     arquivo.close();
     std::cout << "Dados dos jogadores salvos com sucesso.\n";
+}
+
+void Gerente::carregarDados() {
+    std::ifstream arquivo("jogadores_data.txt");
+    if (!arquivo) {
+        std::cerr << "Erro ao abrir o arquivo para leitura.\n";
+        return;
+    }
+
+    std::string linha;
+    while (std::getline(arquivo, linha)) {
+        Jogador novoJogador;
+        novoJogador.desserializar(linha);
+        cadastro.adicionarJogador(novoJogador.getApelido(), novoJogador.getNome());
+        // Configura vitórias e derrotas após adicionar ao cadastro
+        Jogador* jogador = cadastro.obterJogador(novoJogador.getApelido());
+        if (jogador) {
+            jogador->setVitorias(novoJogador.getVitorias());
+            jogador->setDerrotas(novoJogador.getDerrotas());
+        }
+    }
+
+    arquivo.close();
+    std::cout << "Dados dos jogadores carregados com sucesso.\n";
 }

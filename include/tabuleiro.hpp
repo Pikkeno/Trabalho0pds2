@@ -18,6 +18,6 @@ public:
     virtual bool jogar(int linha, int coluna, char jogador) = 0;
     virtual bool jogar(int coluna, char jogador) { return false; }
     virtual bool verificarVitoria() const = 0;
-    virtual void exibirTabuleiro() const;
+    virtual void exibirTabuleiro() const ;
 };
 #endif

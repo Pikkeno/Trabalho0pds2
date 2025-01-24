@@ -10,6 +10,9 @@ public:
     bool verificarVitoria() const override;
     void exibirTabuleiro() const override {  
     }
+
+private:
+    bool daPraandar(char player) const;
 };
 
 #endif // REVERSI_HPP

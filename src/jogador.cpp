@@ -1,4 +1,4 @@
-#include "jogador.hpp"
+#include "Jogador.hpp"
 #include <iostream>
 #include <algorithm>
 #include <sstream>

@@ -19,5 +19,6 @@ public:
     virtual bool jogar(int coluna, char jogador) { return false; }
     virtual bool verificarVitoria() const = 0;
     virtual void exibirTabuleiro() const ;
+    virtual std::string getNome() const { return "JogoDeTabuleiro"; }
 };
 #endif

@@ -8,6 +8,9 @@ public:
     JogoDaVelha();
     bool jogar(int linha,int coluna, char jogador) override;
     bool verificarVitoria() const override;
+    std::string getNome() const override {
+        return "JogoDaVelha";
+    }
 };
 
 #endif // JOGODAVELHA_HPP

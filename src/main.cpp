@@ -36,8 +36,16 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
     std::cout << "Digite o apelido do jogador 2: ";
     std::cin >> apelido2;
 
+    Jogador* jogador1 = cadastro.obterJogador(apelido1);
+    Jogador* jogador2 = cadastro.obterJogador(apelido2);
+
+    if (!jogador1 || !jogador2) {
+        std::cerr << "Erro: Ambos os jogadores devem estar cadastrados para iniciar o jogo.\n";
+        return;
+    }
+
     char jogadorAtual = 'X'; // Alternar entre 'X' e 'O'
-    bool jogoAtivo = true; 
+    bool jogoAtivo = true;
 
     while (jogoAtivo) {
         jogo->exibirTabuleiro();
@@ -46,17 +54,35 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
             std::cout << "Digite a coluna para jogar: ";
             std::cin >> coluna;
             if (jogo->jogar(coluna, jogadorAtual)) {
-                // Código para verificar vitória e registrar resultados
+                if (jogo->verificarVitoria()) {
+                    std::cout << "Parabéns, " << (jogadorAtual == 'X' ? apelido1 : apelido2) << "! Você venceu!\n";
+                    (jogadorAtual == 'X' ? jogador1 : jogador2)->registrarVitoria(jogo->getNome());
+                    (jogadorAtual == 'X' ? jogador2 : jogador1)->registrarDerrota(jogo->getNome());
+                    gerente.salvarDados();
+                    jogoAtivo = false;
+                }
+            } else {
+                std::cout << "Jogada inválida. Tente novamente.\n";
             }
         } else {
             std::cout << "Digite a linha e a coluna para jogar (separados por espaço): ";
             std::cin >> linha >> coluna;
             if (jogo->jogar(linha, coluna, jogadorAtual)) {
-                // Código para verificar vitória e registrar resultados
+                if (jogo->verificarVitoria()) {
+                    std::cout << "Parabéns, " << (jogadorAtual == 'X' ? apelido1 : apelido2) << "! Você venceu!\n";
+                    (jogadorAtual == 'X' ? jogador1 : jogador2)->registrarVitoria(jogo->getNome());
+                    (jogadorAtual == 'X' ? jogador2 : jogador1)->registrarDerrota(jogo->getNome());
+                    gerente.salvarDados();
+                    jogoAtivo = false;
+                }
+            } else {
+                std::cout << "Jogada inválida. Tente novamente.\n";
             }
         }
 
-        // Verificação de vitória e alternação dos jogadores ocorre aqui
+        if (jogoAtivo) {
+            jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X';
+        }
     }
 }
 
@@ -64,7 +90,10 @@ int main() {
     setlocale(LC_ALL, "Portuguese");
 
     Cadastro cadastro;
-    Gerente gerente(cadastro); // Instância do Gerente
+    Gerente gerente(cadastro);
+
+    gerente.carregarDados(); // Carregar dados no início
+
     char opcao;
 
     do {
@@ -86,6 +115,7 @@ int main() {
                 std::cin.ignore();
                 std::getline(std::cin, nome);
                 cadastro.adicionarJogador(apelido, nome);
+                gerente.salvarDados();
                 break;
             }
             case '2': {
@@ -93,6 +123,7 @@ int main() {
                 std::cout << "Digite o apelido do jogador a remover: ";
                 std::cin >> apelido;
                 cadastro.removerJogador(apelido);
+                gerente.salvarDados();
                 break;
             }
             case '3':
@@ -104,6 +135,7 @@ int main() {
                 break;
             }
             case '5':
+                gerente.salvarDados(); // Salvar dados ao sair
                 std::cout << "Saindo do programa...\n";
                 break;
             default:

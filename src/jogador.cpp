@@ -52,14 +52,14 @@ void Jogador::registrarDerrota(const std::string& jogo) {
     totalDerrotas++;
 }
 
-void Jogador::resetE() {
+void Jogador::resetJogador() {
     vitoriaReversi = derrotaReversi = 0;
     vitoriaLiga4 = derrotaLiga4 = 0;
     vitoriaVelha = derrotaVelha = 0;
     totalVitorias = totalDerrotas = 0;
 }
 
-void Jogador::exibirE() const {
+void Jogador::exibirJogador() const {
     std::cout << Apelido << " (" << Nome << "):\n"
               << "Reversi - Vitórias: " << vitoriaReversi << ", Derrotas: " << derrotaReversi << "\n"
               << "Lig4 - Vitórias: " << vitoriaLiga4 << ", Derrotas: " << derrotaLiga4 << "\n"

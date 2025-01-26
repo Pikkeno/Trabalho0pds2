@@ -29,8 +29,8 @@ public:
     void registrarVitoria(const std::string& jogo);
     void registrarDerrota(const std::string& jogo);
 
-    void resetE();
-    void exibirE() const;
+    void resetJogador();
+    void exibirJogador() const;
 
     std::string serializar() const;
     void desserializar(const std::string& dados);

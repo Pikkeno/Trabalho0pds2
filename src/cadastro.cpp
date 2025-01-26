@@ -21,13 +21,14 @@ bool Cadastro::removerJogador(const std::string& apelido) {
     return true;
 }
 
-void Cadastro::listarJogadores() const {
+void Cadastro::exibirJogadores() const {
     if (jogadores.empty()) {
         std::cout << "Nenhum jogador cadastrado.\n";
     } else {
         std::cout << "Lista de Jogadores:\n";
         for (const auto& par : jogadores) {
-            std::cout << "Apelido: " << par.first << ", Nome: " << par.second.getNome() << '\n';
+             par.second.exibirJogador(); '\n';
+             std::cout << "-----------\n";
         }
     }
 }

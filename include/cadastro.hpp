@@ -16,6 +16,7 @@ public:
     void listarJogadores() const;
     Jogador* obterJogador(const std::string& apelido);  // Retorna ponteiro para Jogador
     std::map<std::string, Jogador>& getJogadores();  // Utilizado pelo Gerente para acessar todos os jogadores
+    void exibirJogadores() const;
 };
 
 #endif // CADASTRO_HPP

@@ -1,11 +1,31 @@
+
+/**
+ * @file Reversi.cpp
+ * @brief Implementação do jogo Reversi.
+ */
+
 #include "Reversi.hpp"
 #include <iostream>
+
+/**
+ * @brief Construtor do jogo Reversi.
+ * 
+ * Inicializa o tabuleiro com a configuração padrão do jogo.
+ */
 
 Reversi::Reversi() : JogoDeTabuleiro(8, 8) {
     // Configuração inicial do tabuleiro
     tabuleiro[3][3] = tabuleiro[4][4] = 'O';
     tabuleiro[3][4] = tabuleiro[4][3] = 'X';
 }
+
+/**
+ * @brief Realiza uma jogada no jogo Reversi.
+ * @param linha A linha onde o jogador deseja jogar.
+ * @param coluna A coluna onde o jogador deseja jogar.
+ * @param jogador O símbolo do jogador (ex.: 'X' ou 'O').
+ * @return true se a jogada foi válida, false caso contrário.
+ */
 
 bool Reversi::jogar(int linha, int coluna, char jogador) {
     if (linha < 0 || linha >= 8 || coluna < 0 || coluna >= 8) {
@@ -59,6 +79,11 @@ bool Reversi::jogar(int linha, int coluna, char jogador) {
     return true;
 }
 
+/**
+ * @brief Verifica se o jogo Reversi foi concluído.
+ * @return true se o jogo terminou, false caso contrário.
+ */
+
 bool Reversi::verificarVitoria() const {
     bool hasEmpty = false;  // Verifica se há espaços vazios
     int countX = 0, countO = 0;  // Contadores para as peças de cada jogador
@@ -89,6 +114,12 @@ bool Reversi::verificarVitoria() const {
     return false;
 }
 
+/**
+ * @brief Verifica se um jogador pode realizar jogadas válidas.
+ * @param player O símbolo do jogador (ex.: 'X' ou 'O').
+ * @return true se existem jogadas válidas, false caso contrário.
+ */
+
 bool Reversi::daPraandar(char player) const {
     char opponent = (player == 'X') ? 'O' : 'X';
     const int directions[8][2] = {{-1, 0}, {-1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}};
@@ -116,6 +147,10 @@ bool Reversi::daPraandar(char player) const {
     }
     return false; // Esta lógica precisa ser desenvolvida de acordo com as regras específicas.
 }
+
+/**
+ * @brief Exibe o estado atual do tabuleiro do jogo Reversi.
+ */
 
 void Reversi::exibirTabuleiro() const {
     for (const auto& linha : tabuleiro) {

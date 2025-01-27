@@ -1,3 +1,9 @@
+
+/**
+ * @file main.cpp
+ * @brief Arquivo principal do programa, gerencia o fluxo de execução.
+ */
+
 #include "Cadastro.hpp"
 #include "Gerente.hpp"
 #include "JogoDaVelha.hpp"
@@ -6,6 +12,13 @@
 #include <iostream>
 #include <memory>
 #include <locale.h>
+
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN 
+
+/**
+ * @brief Permite ao usuário selecionar um jogo.
+ * @return Um ponteiro exclusivo para o jogo selecionado.
+ */
 
 std::unique_ptr<JogoDeTabuleiro> selecionarJogo() {
     int escolha;
@@ -28,6 +41,13 @@ std::unique_ptr<JogoDeTabuleiro> selecionarJogo() {
             return std::unique_ptr<JogoDaVelha>(new JogoDaVelha());
     }
 }
+
+/**
+ * @brief Gerencia a execução de uma partida do jogo.
+ * @param jogo Ponteiro para o jogo que será jogado.
+ * @param cadastro Referência ao objeto Cadastro para manipular jogadores.
+ * @param gerente Referência ao objeto Gerente para salvar e carregar dados.
+ */
 
 void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
     std::string apelido1, apelido2;
@@ -86,6 +106,13 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
     }
 }
 
+/**
+ * @brief Função principal do programa.
+ * 
+ * Gerencia o cadastro de jogadores, escolha de jogos e execução das partidas.
+ * @return int Status de saída do programa.
+ */
+
 int main() {
     setlocale(LC_ALL, "Portuguese");
 
@@ -127,7 +154,7 @@ int main() {
                 break;
             }
             case '3':
-                cadastro.listarJogadores();
+                cadastro.exibirJogadores();
                 break;
             case '4': {
                 std::unique_ptr<JogoDeTabuleiro> jogo = selecionarJogo();

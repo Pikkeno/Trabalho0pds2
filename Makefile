@@ -3,7 +3,7 @@ CC = g++
 CFLAGS = -Wall -Wextra -std=c++11 -Iinclude -g
 SRC = $(wildcard src/*.cpp)
 OBJ = $(SRC:src/%.cpp=src/%.o)
-EXEC = programa
+EXEC = JogosDeTabuleiro
 
 # Regras
 all: $(EXEC)

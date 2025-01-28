@@ -130,7 +130,7 @@ int main() {
         std::cout << "3. Listar Jogadores\n";
         std::cout << "4. Jogar\n";
         std::cout << "5. Sair\n";
-        std::cout << "Escolha uma opção: ";
+        std::cout << "Escolha uma opçao: ";
         std::cin >> opcao;
 
         switch (opcao) {

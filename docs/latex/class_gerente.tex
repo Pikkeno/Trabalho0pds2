@@ -1,0 +1,76 @@
+\doxysection{Referência da Classe Gerente}
+\hypertarget{class_gerente}{}\label{class_gerente}\index{Gerente@{Gerente}}
+
+
+Classe responsável por salvar e carregar os dados dos jogadores.  
+
+
+
+
+{\ttfamily \#include $<$Gerente.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gerente_a94cc4a464d92c0cd9bf04aaae8764392}{Gerente}} (\mbox{\hyperlink{class_cadastro}{Cadastro}} \&cadastro)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \doxylink{class_gerente}{Gerente}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gerente_adc7a103144314db965e5bea026f75f30}{salvar\+Dados}} () const
+\begin{DoxyCompactList}\small\item\em Salva os dados dos jogadores em um arquivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gerente_a54aa5bf729ffc80750351d66d78efaf6}{carregar\+Dados}} ()
+\begin{DoxyCompactList}\small\item\em Carrega os dados dos jogadores de um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Classe responsável por salvar e carregar os dados dos jogadores. 
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{class_gerente_a94cc4a464d92c0cd9bf04aaae8764392}\index{Gerente@{Gerente}!Gerente@{Gerente}}
+\index{Gerente@{Gerente}!Gerente@{Gerente}}
+\doxysubsubsection{\texorpdfstring{Gerente()}{Gerente()}}
+{\footnotesize\ttfamily \label{class_gerente_a94cc4a464d92c0cd9bf04aaae8764392} 
+Gerente\+::\+Gerente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cadastro}{Cadastro}} \&}]{cadastro}{}\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \doxylink{class_gerente}{Gerente}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cadastro} & Referência ao objeto \doxylink{class_cadastro}{Cadastro} utilizado para gerenciar os jogadores.\\
+\hline
+{\em cadastro} & Referência ao objeto \doxylink{class_cadastro}{Cadastro} utilizado para manipulação dos jogadores. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{class_gerente_a54aa5bf729ffc80750351d66d78efaf6}\index{Gerente@{Gerente}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!Gerente@{Gerente}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_gerente_a54aa5bf729ffc80750351d66d78efaf6} 
+void Gerente\+::carregar\+Dados (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Carrega os dados dos jogadores de um arquivo. 
+
+Lê os dados do arquivo e atualiza o cadastro com as informações recuperadas.
+
+Lê os dados serializados do arquivo "{}jogadores\+\_\+data.\+txt"{} e os adiciona ao cadastro. \Hypertarget{class_gerente_adc7a103144314db965e5bea026f75f30}\index{Gerente@{Gerente}!salvarDados@{salvarDados}}
+\index{salvarDados@{salvarDados}!Gerente@{Gerente}}
+\doxysubsubsection{\texorpdfstring{salvarDados()}{salvarDados()}}
+{\footnotesize\ttfamily \label{class_gerente_adc7a103144314db965e5bea026f75f30} 
+void Gerente\+::salvar\+Dados (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Salva os dados dos jogadores em um arquivo. 
+
+Os dados são serializados e escritos em um arquivo para posterior recuperação.
+
+Os dados dos jogadores são serializados e escritos no arquivo "{}jogadores\+\_\+data.\+txt"{}. 
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_gerente_8hpp}{Gerente.\+hpp}}\item 
+src/\mbox{\hyperlink{gerente_8cpp}{gerente.\+cpp}}\end{DoxyCompactItemize}

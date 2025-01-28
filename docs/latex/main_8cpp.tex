@@ -1,0 +1,77 @@
+\doxysection{Referência do Arquivo src/main.cpp}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Arquivo principal do programa, gerencia o fluxo de execução.  
+
+
+{\ttfamily \#include "{}Cadastro.\+hpp"{}}\newline
+{\ttfamily \#include "{}Gerente.\+hpp"{}}\newline
+{\ttfamily \#include "{}Jogo\+Da\+Velha.\+hpp"{}}\newline
+{\ttfamily \#include "{}Reversi.\+hpp"{}}\newline
+{\ttfamily \#include "{}Liga4.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_jogo_de_tabuleiro}{Jogo\+De\+Tabuleiro}} $>$ \mbox{\hyperlink{main_8cpp_a6ca8281e1715d546eb22fb25565f1369}{selecionar\+Jogo}} ()
+\begin{DoxyCompactList}\small\item\em Permite ao usuário selecionar um jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_abb40bd63250ba63139968cc9ee4bc771}{jogar\+Jogo}} (\mbox{\hyperlink{class_jogo_de_tabuleiro}{Jogo\+De\+Tabuleiro}} \texorpdfstring{$\ast$}{*}jogo, \mbox{\hyperlink{class_cadastro}{Cadastro}} \&cadastro, \mbox{\hyperlink{class_gerente}{Gerente}} \&gerente)
+\begin{DoxyCompactList}\small\item\em Gerencia a execução de uma partida do jogo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Função principal do programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Arquivo principal do programa, gerencia o fluxo de execução. 
+
+
+
+\doxysubsection{Funções}
+\Hypertarget{main_8cpp_abb40bd63250ba63139968cc9ee4bc771}\index{main.cpp@{main.cpp}!jogarJogo@{jogarJogo}}
+\index{jogarJogo@{jogarJogo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{jogarJogo()}{jogarJogo()}}
+{\footnotesize\ttfamily \label{main_8cpp_abb40bd63250ba63139968cc9ee4bc771} 
+void jogar\+Jogo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_jogo_de_tabuleiro}{Jogo\+De\+Tabuleiro}} \texorpdfstring{$\ast$}{*}}]{jogo}{, }\item[{\mbox{\hyperlink{class_cadastro}{Cadastro}} \&}]{cadastro}{, }\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \&}]{gerente}{}\end{DoxyParamCaption})}
+
+
+
+Gerencia a execução de uma partida do jogo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em jogo} & Ponteiro para o jogo que será jogado. \\
+\hline
+{\em cadastro} & Referência ao objeto \doxylink{class_cadastro}{Cadastro} para manipular jogadores. \\
+\hline
+{\em gerente} & Referência ao objeto \doxylink{class_gerente}{Gerente} para salvar e carregar dados. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Função principal do programa. 
+
+Gerencia o cadastro de jogadores, escolha de jogos e execução das partidas. \begin{DoxyReturn}{Retorna}
+int Status de saída do programa. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a6ca8281e1715d546eb22fb25565f1369}\index{main.cpp@{main.cpp}!selecionarJogo@{selecionarJogo}}
+\index{selecionarJogo@{selecionarJogo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{selecionarJogo()}{selecionarJogo()}}
+{\footnotesize\ttfamily \label{main_8cpp_a6ca8281e1715d546eb22fb25565f1369} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_jogo_de_tabuleiro}{Jogo\+De\+Tabuleiro}} $>$ selecionar\+Jogo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Permite ao usuário selecionar um jogo. 
+
+\begin{DoxyReturn}{Retorna}
+Um ponteiro exclusivo para o jogo selecionado. 
+\end{DoxyReturn}

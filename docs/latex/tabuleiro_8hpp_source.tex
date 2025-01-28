@@ -1,0 +1,45 @@
+\doxysection{tabuleiro.\+hpp}
+\hypertarget{tabuleiro_8hpp_source}{}\label{tabuleiro_8hpp_source}\index{include/tabuleiro.hpp@{include/tabuleiro.hpp}}
+\mbox{\hyperlink{tabuleiro_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ TABULEIRO\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TABULEIRO\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jogo_de_tabuleiro_a837f3f931cb5b3b8a4bbe59ab95a2ef2}{JogoDeTabuleiro}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<std::vector<char>>\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a677a040d103daf070ea125a9b78adf9d}{tabuleiro}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_affe59c99223c8ef23356a98827bcf527}{linhas}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a65d00d9fe732cf9aeaf3aed73b0d5294}{colunas}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_jogo_de_tabuleiro_a837f3f931cb5b3b8a4bbe59ab95a2ef2}{JogoDeTabuleiro}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_affe59c99223c8ef23356a98827bcf527}{linhas}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a65d00d9fe732cf9aeaf3aed73b0d5294}{colunas}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_aefe341883899b14d5cda472308c93e30}{\string~JogoDeTabuleiro}}()\ \{\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a3377db5fdcc2a36f760e7c13288b5cb4}{jogar}}(\textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna,\ \textcolor{keywordtype}{char}\ jogador)\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a78a41ab8566aee0fe509552ac95f5576}{jogar}}(\textcolor{keywordtype}{int}\ coluna,\ \textcolor{keywordtype}{char}\ jogador)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a25ca4ce9c215c1dad37399b53c97085a}{verificarVitoria}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a93228e9432255a984489545f8acb84e6}{exibirTabuleiro}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_aac7e79ec6915e42f7446836cf2ae3abe}{getLinhas}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_affe59c99223c8ef23356a98827bcf527}{linhas}};\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ getColunas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a65d00d9fe732cf9aeaf3aed73b0d5294}{colunas}};\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{char}\ getPosicao(\textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a677a040d103daf070ea125a9b78adf9d}{tabuleiro}}[linha][coluna];\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a13f72edd8937ed2af26573ca6c933dc5}{getNome}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}JogoDeTabuleiro"{}};\ \}}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

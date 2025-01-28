@@ -29,12 +29,12 @@ Reversi::Reversi() : JogoDeTabuleiro(8, 8) {
 
 bool Reversi::jogar(int linha, int coluna, char jogador) {
     if (linha < 0 || linha >= 8 || coluna < 0 || coluna >= 8) {
-        std::cerr << "Posição fora do intervalo.\n";
+        std::cerr << "Posiçao fora do intervalo.\n";
         return false;
     }
 
     if (tabuleiro[linha][coluna] != ' ') {
-        std::cerr << "Posição já ocupada.\n";
+        std::cerr << "Posiçao já ocupada.\n";
         return false;
     }
 
@@ -107,7 +107,7 @@ bool Reversi::verificarVitoria() const {
     // Se não há espaços vazios ou nenhum jogador pode se mover, o jogo termina
     if (!hasEmpty || (!canMoveX && !canMoveO)) {
         std::cout << "Fim do jogo!\n";
-        std::cout << "Pontuação -> X: " << countX << ", O: " << countO << "\n";
+        std::cout << "Pontuaçao -> X: " << countX << ", O: " << countO << "\n";
         return true;
     }
 

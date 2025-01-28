@@ -37,7 +37,7 @@ std::unique_ptr<JogoDeTabuleiro> selecionarJogo() {
         case 3:
             return std::unique_ptr<Liga4>(new Liga4(6, 7)); // Ajustar conforme necessário
         default:
-            std::cout << "Seleção inválida. Escolhendo Jogo da Velha por padrão.\n";
+            std::cout << "Seleçao invalida. Escolhendo Jogo da Velha por padrao.\n";
             return std::unique_ptr<JogoDaVelha>(new JogoDaVelha());
     }
 }
@@ -75,28 +75,28 @@ void jogarJogo(JogoDeTabuleiro* jogo, Cadastro& cadastro, Gerente& gerente) {
             std::cin >> coluna;
             if (jogo->jogar(coluna, jogadorAtual)) {
                 if (jogo->verificarVitoria()) {
-                    std::cout << "Parabéns, " << (jogadorAtual == 'X' ? apelido1 : apelido2) << "! Você venceu!\n";
+                    std::cout << "Parabens, " << (jogadorAtual == 'X' ? apelido1 : apelido2) << "Voce venceu!\n";
                     (jogadorAtual == 'X' ? jogador1 : jogador2)->registrarVitoria(jogo->getNome());
                     (jogadorAtual == 'X' ? jogador2 : jogador1)->registrarDerrota(jogo->getNome());
                     gerente.salvarDados();
                     jogoAtivo = false;
                 }
             } else {
-                std::cout << "Jogada inválida. Tente novamente.\n";
+                std::cout << "Jogada invalida. Tente novamente.\n";
             }
         } else {
             std::cout << "Digite a linha e a coluna para jogar (separados por espaço): ";
             std::cin >> linha >> coluna;
             if (jogo->jogar(linha, coluna, jogadorAtual)) {
                 if (jogo->verificarVitoria()) {
-                    std::cout << "Parabéns, " << (jogadorAtual == 'X' ? apelido1 : apelido2) << "! Você venceu!\n";
+                    std::cout << "Parabens, " << (jogadorAtual == 'X' ? apelido1 : apelido2) << "Voce venceu!\n";
                     (jogadorAtual == 'X' ? jogador1 : jogador2)->registrarVitoria(jogo->getNome());
                     (jogadorAtual == 'X' ? jogador2 : jogador1)->registrarDerrota(jogo->getNome());
                     gerente.salvarDados();
                     jogoAtivo = false;
                 }
             } else {
-                std::cout << "Jogada inválida. Tente novamente.\n";
+                std::cout << "Jogada invalida. Tente novamente.\n";
             }
         }
 
@@ -166,7 +166,7 @@ int main() {
                 std::cout << "Saindo do programa...\n";
                 break;
             default:
-                std::cout << "Opção inválida!\n";
+                std::cout << "Opçao invalida!\n";
         }
     } while (opcao != '5');
 

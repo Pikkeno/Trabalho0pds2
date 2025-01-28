@@ -1,0 +1,62 @@
+\doxysection{Jogador.\+hpp}
+\hypertarget{_jogador_8hpp_source}{}\label{_jogador_8hpp_source}\index{include/Jogador.hpp@{include/Jogador.hpp}}
+\mbox{\hyperlink{_jogador_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ JOGADOR\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ JOGADOR\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <locale.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jogador_a94a4939138ce04d2f3ceb68257517ac1}{Jogador}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ Apelido;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ Nome;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ vitoriaReversi,\ derrotaReversi;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ vitoriaLiga4,\ derrotaLiga4;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ vitoriaVelha,\ derrotaVelha;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ totalVitorias;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ totalDerrotas;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_jogador_a94a4939138ce04d2f3ceb68257517ac1}{Jogador}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_jogador_a94a4939138ce04d2f3ceb68257517ac1}{Jogador}}(\textcolor{keyword}{const}\ std::string\&\ apelido,\ \textcolor{keyword}{const}\ std::string\&\ nome);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogador_aab1dd73438da8f07e1b9b8b9df0a5eb4}{getApelido}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogador_a56f68b57e7fb229f932ef60d2116833c}{getNome}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogador_a4985a4b674964d2af742685c06b7a50b}{getVitorias}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a4767f9e66ed934736c6ef2b24817359b}{setVitorias}}(\textcolor{keywordtype}{int}\ vitorias);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogador_af5338f6cb137ed93451b48c9e8a5c2ee}{getDerrotas}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a2538e0baa3e322252d022c295bb48d09}{setDerrotas}}(\textcolor{keywordtype}{int}\ derrotas);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a9c7cd0411c5ffaed381fe9f1d88462e3}{registrarVitoria}}(\textcolor{keyword}{const}\ std::string\&\ jogo);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_af58a344605d300b7f862b18c859f4236}{registrarDerrota}}(\textcolor{keyword}{const}\ std::string\&\ jogo);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_aadec8e4de9758ed0d35fbc7b1d710103}{resetJogador}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_adcc6f26327973682759fbb989f36fcbf}{exibirJogador}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00126\ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogador_af9571feb75211d55984115362456dd6d}{serializar}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a95993b333af6e9400c89a26d6bcdaaf1}{desserializar}}(\textcolor{keyword}{const}\ std::string\&\ dados);}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JOGADOR\_HPP}}
+
+\end{DoxyCode}

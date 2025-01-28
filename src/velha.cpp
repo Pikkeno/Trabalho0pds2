@@ -24,14 +24,14 @@ JogoDaVelha::JogoDaVelha() : JogoDeTabuleiro(3, 3) {}
 
 bool JogoDaVelha::jogar(int linha, int coluna, char jogador) {
     if (linha < 0 || linha >= 3 || coluna < 0 || coluna >= 3) {
-        std::cerr << "Posição fora do intervalo.\n";
+        std::cerr << "Posiçao fora do intervalo.\n";
         return false;
     }
     if (tabuleiro[linha][coluna] == ' ') {
         tabuleiro[linha][coluna] = jogador;
         return true;
     }
-    std::cerr << "Posição já ocupada.\n";
+    std::cerr << "Posiçao já ocupada.\n";
     return false;
 }
 

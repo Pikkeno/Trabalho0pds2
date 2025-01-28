@@ -39,7 +39,7 @@ bool Liga4::jogar(int linha, int coluna, char jogador) {
 
 bool Liga4::jogar(int coluna, char jogador) {
     if (coluna < 0 || coluna >= colunas) {
-        std::cerr << "Coluna inválida.\n";
+        std::cerr << "Coluna invalida.\n";
         return false;
     }
 

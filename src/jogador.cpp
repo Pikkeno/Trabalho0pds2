@@ -125,10 +125,10 @@ void Jogador::resetJogador() {
 
 void Jogador::exibirJogador() const {
     std::cout << Apelido << " (" << Nome << "):\n"
-              << "Reversi - Vitórias: " << vitoriaReversi << ", Derrotas: " << derrotaReversi << "\n"
-              << "Lig4 - Vitórias: " << vitoriaLiga4 << ", Derrotas: " << derrotaLiga4 << "\n"
-              << "Velha - Vitórias: " << vitoriaVelha << ", Derrotas: " << derrotaVelha << "\n"
-              << "Total - Vitórias: " << totalVitorias << ", Derrotas: " << totalDerrotas << "\n";
+              << "Reversi - Vitorias: " << vitoriaReversi << ", Derrotas: " << derrotaReversi << "\n"
+              << "Lig4 - Vitorias: " << vitoriaLiga4 << ", Derrotas: " << derrotaLiga4 << "\n"
+              << "Velha - Vitorias: " << vitoriaVelha << ", Derrotas: " << derrotaVelha << "\n"
+              << "Total - Vitorias: " << totalVitorias << ", Derrotas: " << totalDerrotas << "\n";
 }
 
 /**

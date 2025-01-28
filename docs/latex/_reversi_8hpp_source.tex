@@ -1,0 +1,33 @@
+\doxysection{Reversi.\+hpp}
+\hypertarget{_reversi_8hpp_source}{}\label{_reversi_8hpp_source}\index{include/Reversi.hpp@{include/Reversi.hpp}}
+\mbox{\hyperlink{_reversi_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ REVERSI\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ REVERSI\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tabuleiro_8hpp}{tabuleiro.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_reversi_a73e3ca5c21b634f9c490b404d62f0e01}{Reversi}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a837f3f931cb5b3b8a4bbe59ab95a2ef2}{JogoDeTabuleiro}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_reversi_a73e3ca5c21b634f9c490b404d62f0e01}{Reversi}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reversi_a47085afc34f9c86519c73ac4dac83766}{jogar}}(\textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna,\ \textcolor{keywordtype}{char}\ jogador)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reversi_abae7f755565ced7d433bd5d898543836}{verificarVitoria}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reversi_afc21871c2ed177292dc52e321c55d2f7}{exibirTabuleiro}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{class_reversi_a0c0b0ba1319f5ded3221eeac06c44571}{getNome}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Reversi"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ daPraandar(\textcolor{keywordtype}{char}\ player)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REVERSI\_HPP}}
+
+\end{DoxyCode}

@@ -991,7 +991,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  =
+INPUT                  = C:/Users/Luiz/Documents/GitHub/Trabalho0pds2/include C:/Users/Luiz/Documents/GitHub/Trabalho0pds2/src
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1049,7 +1049,6 @@ FILE_PATTERNS          = *.c \
                          *.idl \
                          *.ddl \
                          *.odl \
-                         *.h \
                          *.hh \
                          *.hxx \
                          *.hpp \

@@ -1,0 +1,38 @@
+\doxysection{Cadastro.\+hpp}
+\hypertarget{_cadastro_8hpp_source}{}\label{_cadastro_8hpp_source}\index{include/Cadastro.hpp@{include/Cadastro.hpp}}
+\mbox{\hyperlink{_cadastro_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CADASTRO\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CADASTRO\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jogador_8hpp}{Jogador.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cadastro_ad30b60ee39476cd4216807b0d0ba40f6}{Cadastro}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ std::map<std::string,\ Jogador>\ jogadores;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_cadastro_ad30b60ee39476cd4216807b0d0ba40f6}{Cadastro}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cadastro_ab92e1016ac6c8e6fac8bd7916bd81d68}{adicionarJogador}}(\textcolor{keyword}{const}\ std::string\&\ apelido,\ \textcolor{keyword}{const}\ std::string\&\ nome);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cadastro_a142c0032a306bb9e693bc7d34f067af4}{removerJogador}}(\textcolor{keyword}{const}\ std::string\&\ apelido);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cadastro_a9e20033b1cd210d03ef955a318e3522a}{listarJogadores}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_jogador}{Jogador}}*\ \mbox{\hyperlink{class_cadastro_a3cf875e39b98558c349e2a92c739aa77}{obterJogador}}(\textcolor{keyword}{const}\ std::string\&\ apelido);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ std::map<std::string,\ Jogador>\&\ \mbox{\hyperlink{class_cadastro_a7a28bff9e66993a5532321ded60ea96a}{getJogadores}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cadastro_a951f3ca2fade33144d6c9be429836048}{exibirJogadores}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CADASTRO\_HPP}}
+
+\end{DoxyCode}

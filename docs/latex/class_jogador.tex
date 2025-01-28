@@ -1,0 +1,252 @@
+\doxysection{Referência da Classe Jogador}
+\hypertarget{class_jogador}{}\label{class_jogador}\index{Jogador@{Jogador}}
+
+
+Classe que representa um jogador, registrando suas vitórias, derrotas e estatísticas gerais em diferentes jogos.  
+
+
+
+
+{\ttfamily \#include $<$Jogador.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_jogador_a94a4939138ce04d2f3ceb68257517ac1}\label{class_jogador_a94a4939138ce04d2f3ceb68257517ac1} 
+{\bfseries Jogador} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_jogador}{Jogador}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_jogador_a11932150131afc0c73286dc27c1c198c}{Jogador}} (const std\+::string \&apelido, const std\+::string \&nome)
+\begin{DoxyCompactList}\small\item\em Construtor que inicializa o jogador com apelido e nome. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_jogador_aab1dd73438da8f07e1b9b8b9df0a5eb4}{get\+Apelido}} () const
+\begin{DoxyCompactList}\small\item\em Obtém o apelido do jogador. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_jogador_a56f68b57e7fb229f932ef60d2116833c}{get\+Nome}} () const
+\begin{DoxyCompactList}\small\item\em Obtém o nome completo do jogador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_jogador_a4985a4b674964d2af742685c06b7a50b}{get\+Vitorias}} () const
+\begin{DoxyCompactList}\small\item\em Obtém o total de vitórias do jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogador_a4767f9e66ed934736c6ef2b24817359b}{set\+Vitorias}} (int vitorias)
+\begin{DoxyCompactList}\small\item\em Define o total de vitórias do jogador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_jogador_af5338f6cb137ed93451b48c9e8a5c2ee}{get\+Derrotas}} () const
+\begin{DoxyCompactList}\small\item\em Obtém o total de derrotas do jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogador_a2538e0baa3e322252d022c295bb48d09}{set\+Derrotas}} (int derrotas)
+\begin{DoxyCompactList}\small\item\em Define o total de derrotas do jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogador_a9c7cd0411c5ffaed381fe9f1d88462e3}{registrar\+Vitoria}} (const std\+::string \&jogo)
+\begin{DoxyCompactList}\small\item\em Registra uma vitória para o jogador em um jogo específico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogador_af58a344605d300b7f862b18c859f4236}{registrar\+Derrota}} (const std\+::string \&jogo)
+\begin{DoxyCompactList}\small\item\em Registra uma derrota para o jogador em um jogo específico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogador_aadec8e4de9758ed0d35fbc7b1d710103}{reset\+Jogador}} ()
+\begin{DoxyCompactList}\small\item\em Reseta as estatísticas do jogador, zerando vitórias e derrotas. \end{DoxyCompactList}\item 
+\Hypertarget{class_jogador_adcc6f26327973682759fbb989f36fcbf}\label{class_jogador_adcc6f26327973682759fbb989f36fcbf} 
+void {\bfseries exibir\+Jogador} () const
+\begin{DoxyCompactList}\small\item\em Exibe as estatísticas do jogador. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_jogador_af9571feb75211d55984115362456dd6d}{serializar}} () const
+\begin{DoxyCompactList}\small\item\em Serializa os dados do jogador em uma string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogador_a95993b333af6e9400c89a26d6bcdaaf1}{desserializar}} (const std\+::string \&dados)
+\begin{DoxyCompactList}\small\item\em Desserializa os dados do jogador a partir de uma string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Classe que representa um jogador, registrando suas vitórias, derrotas e estatísticas gerais em diferentes jogos. 
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{class_jogador_a11932150131afc0c73286dc27c1c198c}\index{Jogador@{Jogador}!Jogador@{Jogador}}
+\index{Jogador@{Jogador}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{Jogador()}{Jogador()}}
+{\footnotesize\ttfamily \label{class_jogador_a11932150131afc0c73286dc27c1c198c} 
+Jogador\+::\+Jogador (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{apelido}{, }\item[{const std\+::string \&}]{nome}{}\end{DoxyParamCaption})}
+
+
+
+Construtor que inicializa o jogador com apelido e nome. 
+
+Construtor da classe \doxylink{class_jogador}{Jogador}.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em apelido} & Apelido do jogador. \\
+\hline
+{\em nome} & Nome completo do jogador.\\
+\hline
+{\em apelido} & O apelido do jogador. \\
+\hline
+{\em nome} & O nome completo do jogador. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{class_jogador_a95993b333af6e9400c89a26d6bcdaaf1}\index{Jogador@{Jogador}!desserializar@{desserializar}}
+\index{desserializar@{desserializar}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{desserializar()}{desserializar()}}
+{\footnotesize\ttfamily \label{class_jogador_a95993b333af6e9400c89a26d6bcdaaf1} 
+void Jogador\+::desserializar (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dados}{}\end{DoxyParamCaption})}
+
+
+
+Desserializa os dados do jogador a partir de uma string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em dados} & String contendo os dados do jogador.\\
+\hline
+{\em dados} & A string contendo os dados do jogador. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_jogador_aab1dd73438da8f07e1b9b8b9df0a5eb4}\index{Jogador@{Jogador}!getApelido@{getApelido}}
+\index{getApelido@{getApelido}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{getApelido()}{getApelido()}}
+{\footnotesize\ttfamily \label{class_jogador_aab1dd73438da8f07e1b9b8b9df0a5eb4} 
+std\+::string Jogador\+::get\+Apelido (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtém o apelido do jogador. 
+
+\begin{DoxyReturn}{Retorna}
+Apelido do jogador.
+
+O apelido do jogador. 
+\end{DoxyReturn}
+\Hypertarget{class_jogador_af5338f6cb137ed93451b48c9e8a5c2ee}\index{Jogador@{Jogador}!getDerrotas@{getDerrotas}}
+\index{getDerrotas@{getDerrotas}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{getDerrotas()}{getDerrotas()}}
+{\footnotesize\ttfamily \label{class_jogador_af5338f6cb137ed93451b48c9e8a5c2ee} 
+int Jogador\+::get\+Derrotas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtém o total de derrotas do jogador. 
+
+\begin{DoxyReturn}{Retorna}
+Total de derrotas.
+
+O total de derrotas. 
+\end{DoxyReturn}
+\Hypertarget{class_jogador_a56f68b57e7fb229f932ef60d2116833c}\index{Jogador@{Jogador}!getNome@{getNome}}
+\index{getNome@{getNome}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily \label{class_jogador_a56f68b57e7fb229f932ef60d2116833c} 
+std\+::string Jogador\+::get\+Nome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtém o nome completo do jogador. 
+
+\begin{DoxyReturn}{Retorna}
+Nome completo do jogador.
+
+O nome completo do jogador. 
+\end{DoxyReturn}
+\Hypertarget{class_jogador_a4985a4b674964d2af742685c06b7a50b}\index{Jogador@{Jogador}!getVitorias@{getVitorias}}
+\index{getVitorias@{getVitorias}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{getVitorias()}{getVitorias()}}
+{\footnotesize\ttfamily \label{class_jogador_a4985a4b674964d2af742685c06b7a50b} 
+int Jogador\+::get\+Vitorias (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtém o total de vitórias do jogador. 
+
+\begin{DoxyReturn}{Retorna}
+Total de vitórias.
+
+O total de vitórias. 
+\end{DoxyReturn}
+\Hypertarget{class_jogador_af58a344605d300b7f862b18c859f4236}\index{Jogador@{Jogador}!registrarDerrota@{registrarDerrota}}
+\index{registrarDerrota@{registrarDerrota}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{registrarDerrota()}{registrarDerrota()}}
+{\footnotesize\ttfamily \label{class_jogador_af58a344605d300b7f862b18c859f4236} 
+void Jogador\+::registrar\+Derrota (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{jogo}{}\end{DoxyParamCaption})}
+
+
+
+Registra uma derrota para o jogador em um jogo específico. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em jogo} & Nome do jogo ("{}\+Reversi"{}, "{}\+Liga4"{}, ou "{}\+Jogo\+Da\+Velha"{}).\\
+\hline
+{\em jogo} & O nome do jogo ("{}\+Reversi"{}, "{}\+Liga4"{}, ou "{}\+Jogo\+Da\+Velha"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_jogador_a9c7cd0411c5ffaed381fe9f1d88462e3}\index{Jogador@{Jogador}!registrarVitoria@{registrarVitoria}}
+\index{registrarVitoria@{registrarVitoria}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{registrarVitoria()}{registrarVitoria()}}
+{\footnotesize\ttfamily \label{class_jogador_a9c7cd0411c5ffaed381fe9f1d88462e3} 
+void Jogador\+::registrar\+Vitoria (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{jogo}{}\end{DoxyParamCaption})}
+
+
+
+Registra uma vitória para o jogador em um jogo específico. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em jogo} & Nome do jogo ("{}\+Reversi"{}, "{}\+Liga4"{}, ou "{}\+Jogo\+Da\+Velha"{}).\\
+\hline
+{\em jogo} & O nome do jogo ("{}\+Reversi"{}, "{}\+Liga4"{}, ou "{}\+Jogo\+Da\+Velha"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_jogador_aadec8e4de9758ed0d35fbc7b1d710103}\index{Jogador@{Jogador}!resetJogador@{resetJogador}}
+\index{resetJogador@{resetJogador}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{resetJogador()}{resetJogador()}}
+{\footnotesize\ttfamily \label{class_jogador_aadec8e4de9758ed0d35fbc7b1d710103} 
+void Jogador\+::reset\+Jogador (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reseta as estatísticas do jogador, zerando vitórias e derrotas. 
+
+Reseta os dados do jogador, zerando vitórias e derrotas. \Hypertarget{class_jogador_af9571feb75211d55984115362456dd6d}\index{Jogador@{Jogador}!serializar@{serializar}}
+\index{serializar@{serializar}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{serializar()}{serializar()}}
+{\footnotesize\ttfamily \label{class_jogador_af9571feb75211d55984115362456dd6d} 
+std\+::string Jogador\+::serializar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Serializa os dados do jogador em uma string. 
+
+\begin{DoxyReturn}{Retorna}
+String contendo os dados do jogador.
+
+A string contendo os dados do jogador. 
+\end{DoxyReturn}
+\Hypertarget{class_jogador_a2538e0baa3e322252d022c295bb48d09}\index{Jogador@{Jogador}!setDerrotas@{setDerrotas}}
+\index{setDerrotas@{setDerrotas}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{setDerrotas()}{setDerrotas()}}
+{\footnotesize\ttfamily \label{class_jogador_a2538e0baa3e322252d022c295bb48d09} 
+void Jogador\+::set\+Derrotas (\begin{DoxyParamCaption}\item[{int}]{derrotas}{}\end{DoxyParamCaption})}
+
+
+
+Define o total de derrotas do jogador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em derrotas} & Novo total de derrotas.\\
+\hline
+{\em derrotas} & O novo total de derrotas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_jogador_a4767f9e66ed934736c6ef2b24817359b}\index{Jogador@{Jogador}!setVitorias@{setVitorias}}
+\index{setVitorias@{setVitorias}!Jogador@{Jogador}}
+\doxysubsubsection{\texorpdfstring{setVitorias()}{setVitorias()}}
+{\footnotesize\ttfamily \label{class_jogador_a4767f9e66ed934736c6ef2b24817359b} 
+void Jogador\+::set\+Vitorias (\begin{DoxyParamCaption}\item[{int}]{vitorias}{}\end{DoxyParamCaption})}
+
+
+
+Define o total de vitórias do jogador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em vitorias} & Novo total de vitórias.\\
+\hline
+{\em vitorias} & O novo total de vitórias. \\
+\hline
+\end{DoxyParams}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_jogador_8hpp}{Jogador.\+hpp}}\item 
+src/\mbox{\hyperlink{jogador_8cpp}{jogador.\+cpp}}\end{DoxyCompactItemize}

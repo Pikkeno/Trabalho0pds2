@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho de PDS2: Código-Fonte de include/Liga4.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho de PDS2
+   </div>
+   <div id="projectbrief">JOGOS DE TABULEIRO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_liga4_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Liga4.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_liga4_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef LIGA4_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define LIGA4_HPP</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="tabuleiro_8hpp.html">tabuleiro.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_liga4.html">   17</a></span><span class="keyword">class </span><a class="code hl_function" href="class_liga4.html#a9b4a221283484af1f0b83680f8fdcfe1">Liga4</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_jogo_de_tabuleiro.html#a837f3f931cb5b3b8a4bbe59ab95a2ef2">JogoDeTabuleiro</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_liga4.html#a9b4a221283484af1f0b83680f8fdcfe1">Liga4</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="class_jogo_de_tabuleiro.html#affe59c99223c8ef23356a98827bcf527">linhas</a> = 6, <span class="keywordtype">int</span> <a class="code hl_variable" href="class_jogo_de_tabuleiro.html#a65d00d9fe732cf9aeaf3aed73b0d5294">colunas</a> = 7);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_liga4.html#ac7de58bdcbc2a1c9866dff3e752cc9ff">jogar</a>(<span class="keywordtype">int</span> linha, <span class="keywordtype">int</span> coluna, <span class="keywordtype">char</span> jogador) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_liga4.html#a05c2aae33b361e72d7f30ed0367ba0b7">verificarVitoria</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_liga4.html#a73cea6f863cafbefe8433a6507429534">   45</a></span>    std::string <a class="code hl_function" href="class_liga4.html#a73cea6f863cafbefe8433a6507429534">getNome</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Liga4&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_liga4.html#ac7de58bdcbc2a1c9866dff3e752cc9ff">jogar</a>(<span class="keywordtype">int</span> coluna, <span class="keywordtype">char</span> jogador);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">// LIGA4_HPP</span></div>
+<div class="ttc" id="aclass_jogo_de_tabuleiro_html_a65d00d9fe732cf9aeaf3aed73b0d5294"><div class="ttname"><a href="class_jogo_de_tabuleiro.html#a65d00d9fe732cf9aeaf3aed73b0d5294">JogoDeTabuleiro::colunas</a></div><div class="ttdeci">int colunas</div><div class="ttdoc">Número de colunas do tabuleiro.</div><div class="ttdef"><b>Definição</b> tabuleiro.hpp:33</div></div>
+<div class="ttc" id="aclass_jogo_de_tabuleiro_html_a837f3f931cb5b3b8a4bbe59ab95a2ef2"><div class="ttname"><a href="class_jogo_de_tabuleiro.html#a837f3f931cb5b3b8a4bbe59ab95a2ef2">JogoDeTabuleiro::JogoDeTabuleiro</a></div><div class="ttdeci">JogoDeTabuleiro(int linhas, int colunas)</div><div class="ttdoc">Construtor da classe JogoDeTabuleiro.</div><div class="ttdef"><b>Definição</b> tabuleiro.cpp:15</div></div>
+<div class="ttc" id="aclass_jogo_de_tabuleiro_html_affe59c99223c8ef23356a98827bcf527"><div class="ttname"><a href="class_jogo_de_tabuleiro.html#affe59c99223c8ef23356a98827bcf527">JogoDeTabuleiro::linhas</a></div><div class="ttdeci">int linhas</div><div class="ttdoc">Número de linhas do tabuleiro.</div><div class="ttdef"><b>Definição</b> tabuleiro.hpp:28</div></div>
+<div class="ttc" id="aclass_liga4_html_a05c2aae33b361e72d7f30ed0367ba0b7"><div class="ttname"><a href="class_liga4.html#a05c2aae33b361e72d7f30ed0367ba0b7">Liga4::verificarVitoria</a></div><div class="ttdeci">virtual bool verificarVitoria() const override</div><div class="ttdoc">Verifica se houve um vencedor no jogo Liga4.</div><div class="ttdef"><b>Definição</b> liga4.cpp:62</div></div>
+<div class="ttc" id="aclass_liga4_html_a73cea6f863cafbefe8433a6507429534"><div class="ttname"><a href="class_liga4.html#a73cea6f863cafbefe8433a6507429534">Liga4::getNome</a></div><div class="ttdeci">std::string getNome() const override</div><div class="ttdoc">Obtém o nome do jogo.</div><div class="ttdef"><b>Definição</b> Liga4.hpp:45</div></div>
+<div class="ttc" id="aclass_liga4_html_a9b4a221283484af1f0b83680f8fdcfe1"><div class="ttname"><a href="class_liga4.html#a9b4a221283484af1f0b83680f8fdcfe1">Liga4::Liga4</a></div><div class="ttdeci">Liga4(int linhas=6, int colunas=7)</div><div class="ttdoc">Construtor do jogo Liga4.</div><div class="ttdef"><b>Definição</b> liga4.cpp:16</div></div>
+<div class="ttc" id="aclass_liga4_html_ac7de58bdcbc2a1c9866dff3e752cc9ff"><div class="ttname"><a href="class_liga4.html#ac7de58bdcbc2a1c9866dff3e752cc9ff">Liga4::jogar</a></div><div class="ttdeci">virtual bool jogar(int linha, int coluna, char jogador) override</div><div class="ttdoc">Realiza uma jogada no jogo Liga4.</div><div class="ttdef"><b>Definição</b> liga4.cpp:28</div></div>
+<div class="ttc" id="atabuleiro_8hpp_html"><div class="ttname"><a href="tabuleiro_8hpp.html">tabuleiro.hpp</a></div><div class="ttdoc">Definição da classe base JogoDeTabuleiro para criação de jogos de tabuleiro genéricos.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_liga4_8hpp.html">Liga4.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

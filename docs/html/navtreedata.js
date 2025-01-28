@@ -25,13 +25,29 @@
 var NAVTREE =
 [
   [ "Trabalho de PDS2", "index.html", [
-    [ "README", "md__r_e_a_d_m_e.html", null ]
+    [ "Classes", "annotated.html", [
+      [ "Lista de Classes", "annotated.html", "annotated_dup" ],
+      [ "Índice dos Componentes", "classes.html", null ],
+      [ "Hierarquia de Classes", "hierarchy.html", "hierarchy" ],
+      [ "Membros de classe", "functions.html", [
+        [ "Todos", "functions.html", null ],
+        [ "Funções", "functions_func.html", null ],
+        [ "Variáveis", "functions_vars.html", null ]
+      ] ]
+    ] ],
+    [ "Arquivos", "files.html", [
+      [ "Lista de Arquivos", "files.html", "files_dup" ],
+      [ "Membros dos Arquivos", "globals.html", [
+        [ "Todos", "globals.html", null ],
+        [ "Funções", "globals_func.html", null ]
+      ] ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"_cadastro_8hpp.html"
 ];
 
 var SYNCONMSG = 'clique para desativar a sincronização do painel';

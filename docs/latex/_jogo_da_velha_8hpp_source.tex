@@ -1,0 +1,29 @@
+\doxysection{Jogo\+Da\+Velha.\+hpp}
+\hypertarget{_jogo_da_velha_8hpp_source}{}\label{_jogo_da_velha_8hpp_source}\index{include/JogoDaVelha.hpp@{include/JogoDaVelha.hpp}}
+\mbox{\hyperlink{_jogo_da_velha_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ JOGODAVELHA\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ JOGODAVELHA\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tabuleiro_8hpp}{tabuleiro.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jogo_da_velha_a4cd8634f2b9f754fae92e2e6bc897c19}{JogoDaVelha}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_jogo_de_tabuleiro_a837f3f931cb5b3b8a4bbe59ab95a2ef2}{JogoDeTabuleiro}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_jogo_da_velha_a4cd8634f2b9f754fae92e2e6bc897c19}{JogoDaVelha}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo_da_velha_a14f2a9b60b7dd99897e804bbe1fc6711}{jogar}}(\textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna,\ \textcolor{keywordtype}{char}\ jogador)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo_da_velha_a009bd9a1f26280c19743e1de20cfbd0e}{verificarVitoria}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogo_da_velha_ad9a22d136fc6c419e1cb37efbcf79a71}{getNome}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}JogoDaVelha"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JOGODAVELHA\_HPP}}
+
+\end{DoxyCode}
